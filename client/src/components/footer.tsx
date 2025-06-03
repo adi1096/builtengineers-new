@@ -1,0 +1,106 @@
+import { Building } from "lucide-react";
+
+export default function Footer() {
+  return (
+    <footer className="bg-gray-800 text-white py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-4 gap-8 mb-8">
+          {/* Company Info */}
+          <div>
+            <div className="flex items-center space-x-2 mb-4">
+              <div className="w-8 h-8 bg-green-primary rounded flex items-center justify-center">
+                <Building className="text-white w-4 h-4" />
+              </div>
+              <div>
+                <div className="text-sm font-semibold">BUILT ENGINEERS</div>
+                <div className="text-xs text-gray-400">& CONSULTANTS</div>
+              </div>
+            </div>
+            <p className="text-gray-400">
+              Professional structural engineering solutions built on precision and driven by innovation.
+            </p>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h4 className="font-semibold mb-4">Services</h4>
+            <ul className="space-y-2 text-gray-400">
+              <li>
+                <a href="#services" className="hover:text-white transition-colors">
+                  Structural Design
+                </a>
+              </li>
+              <li>
+                <a href="#services" className="hover:text-white transition-colors">
+                  Site Inspections
+                </a>
+              </li>
+              <li>
+                <a href="#services" className="hover:text-white transition-colors">
+                  Structural Certification
+                </a>
+              </li>
+              <li>
+                <a href="#services" className="hover:text-white transition-colors">
+                  Construction Support
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h4 className="font-semibold mb-4">Resources</h4>
+            <ul className="space-y-2 text-gray-400">
+              <li>
+                <a href="#resources" className="hover:text-white transition-colors">
+                  Built Suite
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="hover:text-white transition-colors">
+                  Documentation
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="hover:text-white transition-colors">
+                  Training
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="hover:text-white transition-colors">
+                  Support
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="font-semibold mb-4">Contact</h4>
+            <ul className="space-y-2 text-gray-400">
+              <li className="flex items-center">
+                <span className="mr-2">✉️</span>
+                info@builtengineers.com.au
+              </li>
+              <li className="flex items-center">
+                <span className="mr-2">📞</span>
+                (02) 1234 5678
+              </li>
+              <li className="flex items-center">
+                <span className="mr-2">📍</span>
+                Sydney, Australia
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="border-t border-gray-700 pt-8 text-center text-gray-400">
+          <p>&copy; 2025 Built Engineers. All rights reserved.</p>
+          <p className="text-sm mt-2">Designed & built with React + Bootstrap.</p>
+        </div>
+      </div>
+    </footer>
+  );
+}
