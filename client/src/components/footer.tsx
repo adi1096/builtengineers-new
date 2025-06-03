@@ -7,12 +7,21 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-green-primary rounded flex items-center justify-center">
-                <Building className="text-white w-4 h-4" />
+            <div className="flex items-center space-x-3 mb-4">
+              {/* Bar Chart Icon */}
+              <div className="flex items-end space-x-0.5">
+                <div className="w-1.5 h-3 bg-green-primary rounded-sm"></div>
+                <div className="w-1.5 h-4 bg-green-primary rounded-sm"></div>
+                <div className="w-1.5 h-6 bg-green-primary rounded-sm"></div>
+                <div className="w-1.5 h-8 bg-green-primary rounded-sm"></div>
+                <div className="w-1.5 h-6 bg-green-primary rounded-sm"></div>
+                <div className="w-1.5 h-7 bg-green-primary rounded-sm"></div>
+                <div className="w-1.5 h-5 bg-green-primary rounded-sm"></div>
+                <div className="w-1.5 h-4 bg-green-primary rounded-sm"></div>
+                <div className="w-1.5 h-3 bg-green-primary rounded-sm"></div>
               </div>
               <div>
-                <div className="text-sm font-semibold">BUILT ENGINEERS</div>
+                <div className="text-sm font-bold">BUILT ENGINEERS</div>
                 <div className="text-xs text-gray-400">& CONSULTANTS</div>
               </div>
             </div>

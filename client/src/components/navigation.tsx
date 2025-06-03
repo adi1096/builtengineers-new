@@ -50,13 +50,23 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-green-primary rounded-sm flex items-center justify-center">
-                <Building className="text-white w-4 h-4" />
+            <div className="flex items-center space-x-3">
+              {/* Bar Chart Icon */}
+              <div className="flex items-end space-x-0.5">
+                <div className="w-1.5 h-3 bg-green-primary rounded-sm"></div>
+                <div className="w-1.5 h-4 bg-green-primary rounded-sm"></div>
+                <div className="w-1.5 h-6 bg-green-primary rounded-sm"></div>
+                <div className="w-1.5 h-8 bg-green-primary rounded-sm"></div>
+                <div className="w-1.5 h-6 bg-green-primary rounded-sm"></div>
+                <div className="w-1.5 h-7 bg-green-primary rounded-sm"></div>
+                <div className="w-1.5 h-5 bg-green-primary rounded-sm"></div>
+                <div className="w-1.5 h-4 bg-green-primary rounded-sm"></div>
+                <div className="w-1.5 h-3 bg-green-primary rounded-sm"></div>
               </div>
               <div>
-                <div className="text-sm font-semibold text-gray-dark">BUILT</div>
-                <div className="text-xs text-gray-text">ENGINEERS & CONSULTANTS</div>
+                <div className="text-lg font-bold text-gray-dark">BUILT</div>
+                <div className="text-lg font-bold text-gray-dark">ENGINEERS</div>
+                <div className="text-sm font-semibold text-gray-dark">& CONSULTANTS</div>
               </div>
             </div>
           </div>

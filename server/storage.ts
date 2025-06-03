@@ -100,7 +100,8 @@ export class MemStorage implements IStorage {
   async createContact(insertContact: InsertContact): Promise<Contact> {
     const id = this.currentContactId++;
     const contact: Contact = { 
-      ...insertContact, 
+      ...insertContact,
+      projectType: insertContact.projectType || null,
       id,
       createdAt: new Date()
     };
@@ -114,7 +115,11 @@ export class MemStorage implements IStorage {
 
   async createTestimonial(insertTestimonial: InsertTestimonial): Promise<Testimonial> {
     const id = this.currentTestimonialId++;
-    const testimonial: Testimonial = { ...insertTestimonial, id };
+    const testimonial: Testimonial = { 
+      ...insertTestimonial, 
+      rating: insertTestimonial.rating || 5,
+      id 
+    };
     this.testimonials.set(id, testimonial);
     return testimonial;
   }
