@@ -16,7 +16,7 @@ export default function TestimonialsSection() {
             <h2 className="text-green-primary text-sm font-semibold tracking-wide uppercase mb-2">
               CLIENT TESTIMONIALS
             </h2>
-            <p className="text-3xl md:text-4xl font-bold text-gray-dark">
+            <p className="text-xl md:text-xl text-gray-dark">
               See what our clients say about our structural engineering services
             </p>
           </div>
@@ -43,25 +43,33 @@ export default function TestimonialsSection() {
   }
 
   return (
-    <section id="testimonials" className="py-20 bg-white">
+    <section id="testimonials" className="py-12 sm:py-16 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 md:mb-16">
           <h2 className="text-green-primary text-sm font-semibold tracking-wide uppercase mb-2">
             CLIENT TESTIMONIALS
           </h2>
-          <p className="text-3xl md:text-4xl font-bold text-gray-dark">
+          <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-dark px-2">
             See what our clients say about our structural engineering services
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {testimonials?.map((testimonial) => (
-            <Card key={testimonial.id} className="bg-gray-light rounded-xl hover:shadow-lg transition-shadow duration-200">
+            <Card
+              key={testimonial.id}
+              className="bg-gray-light rounded-xl hover:shadow-lg transition-shadow duration-200"
+            >
               <CardContent className="p-6">
                 <div className="flex items-center mb-4">
-                  {Array.from({ length: testimonial.rating }).map((_, index) => (
-                    <Star key={index} className="w-5 h-5 text-yellow-400 fill-current" />
-                  ))}
+                  {Array.from({ length: testimonial.rating }).map(
+                    (_, index) => (
+                      <Star
+                        key={index}
+                        className="w-5 h-5 text-yellow-400 fill-current"
+                      />
+                    ),
+                  )}
                 </div>
                 <p className="text-gray-text italic mb-6">
                   "{testimonial.testimonialText}"

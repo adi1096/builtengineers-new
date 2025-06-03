@@ -1,4 +1,14 @@
-import { contacts, testimonials, users, type User, type InsertUser, type Contact, type InsertContact, type Testimonial, type InsertTestimonial } from "@shared/schema";
+import {
+  contacts,
+  testimonials,
+  users,
+  type User,
+  type InsertUser,
+  type Contact,
+  type InsertContact,
+  type Testimonial,
+  type InsertTestimonial,
+} from "@shared/schema";
 
 export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
@@ -24,7 +34,7 @@ export class MemStorage implements IStorage {
     this.currentUserId = 1;
     this.currentContactId = 1;
     this.currentTestimonialId = 1;
-    
+
     // Initialize with sample testimonials
     this.initializeTestimonials();
   }
@@ -32,50 +42,55 @@ export class MemStorage implements IStorage {
   private initializeTestimonials() {
     const sampleTestimonials: InsertTestimonial[] = [
       {
-        clientName: "Sarah Johnson",
-        clientCompany: "Project Manager, BuildCorp",
+        clientName: "Sarah Davidson",
+        clientCompany: "Project Manager, Stallion Projects",
         rating: 5,
-        testimonialText: "Built Engineers delivered exceptional structural design services for our home renovation. Their attention to detail and compliance expertise saved us both time and money.",
-        initials: "SJ"
+        testimonialText:
+          "Built Engineers delivered exceptional structural design services for our home renovation. Their attention to detail and compliance expertise saved us both time and money.",
+        initials: "SD",
       },
       {
         clientName: "Michael Chen",
         clientCompany: "Homeowner",
         rating: 5,
-        testimonialText: "The team provided excellent structural certification for our home renovation. Professional, timely, and very knowledgeable about local building codes.",
-        initials: "MC"
+        testimonialText:
+          "The team provided excellent structural certification for our home renovation. Professional, timely, and very professional.",
+        initials: "MC",
       },
       {
         clientName: "David Rodriguez",
         clientCompany: "Construction Manager, Premium Builds",
         rating: 5,
-        testimonialText: "Outstanding site inspection services. Their detailed reports and quick turnaround helped keep our project on schedule. Highly recommended!",
-        initials: "DR"
+        testimonialText:
+          "Outstanding site inspection services. Their detailed reports and quick turnaround helped keep our project on schedule. Highly recommended!",
+        initials: "DR",
       },
       {
-        clientName: "Lisa Thompson",
-        clientCompany: "Architect, Design Studios",
+        clientName: "Moira Thompson",
+        clientCompany: "Architect, Design Solutions Studio",
         rating: 5,
-        testimonialText: "We've worked with Built Engineers on multiple projects. Their structural analysis and design solutions are always innovative and code-compliant.",
-        initials: "LT"
+        testimonialText:
+          "We've worked with Built Engineers on multiple projects. Their structural design solutions are always innovative and cost-effective",
+        initials: "MT",
       },
       {
-        clientName: "James Wilson",
+        clientName: "Mo Wa",
         clientCompany: "Developer, Urban Properties",
         rating: 5,
-        testimonialText: "Reliable and professional structural engineering services. The team's expertise in both residential and commercial projects is impressive.",
-        initials: "JW"
+        testimonialText:
+          "Excellent service by the team. Well priced, responsive, and punctual with commitment.",
+        initials: "MW",
       },
       {
-        clientName: "Amanda Kim",
-        clientCompany: "Property Manager",
+        clientName: "Graham Barber",
+        clientCompany: "Homeowner",
         rating: 5,
-        testimonialText: "Excellent consultation services for our heritage building retrofit. They provided creative solutions while maintaining structural integrity.",
-        initials: "AK"
-      }
+        testimonialText: "Very professional and really knew their stuff.",
+        initials: "GB",
+      },
     ];
 
-    sampleTestimonials.forEach(testimonial => {
+    sampleTestimonials.forEach((testimonial) => {
       this.createTestimonial(testimonial);
     });
   }
@@ -99,11 +114,11 @@ export class MemStorage implements IStorage {
 
   async createContact(insertContact: InsertContact): Promise<Contact> {
     const id = this.currentContactId++;
-    const contact: Contact = { 
+    const contact: Contact = {
       ...insertContact,
       projectType: insertContact.projectType || null,
       id,
-      createdAt: new Date()
+      createdAt: new Date(),
     };
     this.contacts.set(id, contact);
     return contact;
@@ -113,12 +128,14 @@ export class MemStorage implements IStorage {
     return Array.from(this.testimonials.values());
   }
 
-  async createTestimonial(insertTestimonial: InsertTestimonial): Promise<Testimonial> {
+  async createTestimonial(
+    insertTestimonial: InsertTestimonial,
+  ): Promise<Testimonial> {
     const id = this.currentTestimonialId++;
-    const testimonial: Testimonial = { 
-      ...insertTestimonial, 
+    const testimonial: Testimonial = {
+      ...insertTestimonial,
       rating: insertTestimonial.rating || 5,
-      id 
+      id,
     };
     this.testimonials.set(id, testimonial);
     return testimonial;

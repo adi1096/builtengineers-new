@@ -4,7 +4,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { useMutation } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
@@ -22,7 +28,7 @@ export default function ContactSection() {
     fullName: "",
     email: "",
     projectType: "",
-    message: ""
+    message: "",
   });
   const { toast } = useToast();
 
@@ -40,7 +46,7 @@ export default function ContactSection() {
         fullName: "",
         email: "",
         projectType: "",
-        message: ""
+        message: "",
       });
     },
     onError: (error: Error) => {
@@ -54,7 +60,7 @@ export default function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!formData.fullName || !formData.email || !formData.message) {
       toast({
         title: "Please fill in all required fields",
@@ -67,25 +73,25 @@ export default function ContactSection() {
   };
 
   const handleInputChange = (field: keyof ContactFormData, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
   const contactInfo = [
     {
       icon: Mail,
       title: "Email Us",
-      content: "info@builtengineers.com.au"
+      content: "info@builtengineers.com.au",
     },
     {
       icon: Phone,
       title: "Call Us",
-      content: "+61 (0) 123 456 789"
+      content: "+61 414 142 833",
     },
     {
       icon: MapPin,
       title: "Visit Us",
-      content: "Sydney, Australia"
-    }
+      content: "Sydney, Australia",
+    },
   ];
 
   return (
@@ -95,7 +101,7 @@ export default function ContactSection() {
           <h2 className="text-green-primary text-sm font-semibold tracking-wide uppercase mb-2">
             CONTACT US
           </h2>
-          <p className="text-3xl md:text-4xl font-bold text-gray-dark">
+          <p className="text-xl md:text-xl text-gray-dark">
             Get in touch with our engineering team
           </p>
         </div>
@@ -106,7 +112,10 @@ export default function ContactSection() {
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Full Name */}
               <div>
-                <Label htmlFor="fullName" className="block text-sm font-semibold text-gray-dark mb-2">
+                <Label
+                  htmlFor="fullName"
+                  className="block text-sm font-semibold text-gray-dark mb-2"
+                >
                   Full Name *
                 </Label>
                 <Input
@@ -114,7 +123,9 @@ export default function ContactSection() {
                   type="text"
                   placeholder="Enter your full name"
                   value={formData.fullName}
-                  onChange={(e) => handleInputChange("fullName", e.target.value)}
+                  onChange={(e) =>
+                    handleInputChange("fullName", e.target.value)
+                  }
                   required
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-green-primary focus:ring-2 focus:ring-green-light focus:outline-none transition-colors"
                 />
@@ -122,7 +133,10 @@ export default function ContactSection() {
 
               {/* Email Address */}
               <div>
-                <Label htmlFor="email" className="block text-sm font-semibold text-gray-dark mb-2">
+                <Label
+                  htmlFor="email"
+                  className="block text-sm font-semibold text-gray-dark mb-2"
+                >
                   Email Address *
                 </Label>
                 <Input
@@ -138,27 +152,48 @@ export default function ContactSection() {
 
               {/* Project Type */}
               <div>
-                <Label htmlFor="projectType" className="block text-sm font-semibold text-gray-dark mb-2">
+                <Label
+                  htmlFor="projectType"
+                  className="block text-sm font-semibold text-gray-dark mb-2"
+                >
                   Project Type
                 </Label>
-                <Select value={formData.projectType} onValueChange={(value) => handleInputChange("projectType", value)}>
+                <Select
+                  value={formData.projectType}
+                  onValueChange={(value) =>
+                    handleInputChange("projectType", value)
+                  }
+                >
                   <SelectTrigger className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-green-primary focus:ring-2 focus:ring-green-light focus:outline-none transition-colors">
                     <SelectValue placeholder="Select project type" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="residential">Residential Design</SelectItem>
-                    <SelectItem value="commercial">Commercial Building</SelectItem>
+                    <SelectItem value="residential">
+                      Residential Design
+                    </SelectItem>
+                    <SelectItem value="commercial">
+                      Commercial Building
+                    </SelectItem>
                     <SelectItem value="inspection">Site Inspection</SelectItem>
-                    <SelectItem value="certification">Structural Certification</SelectItem>
-                    <SelectItem value="consultation">Engineering Consultation</SelectItem>
-                    <SelectItem value="builtsuite">Built Suite Access/Training</SelectItem>
+                    <SelectItem value="certification">
+                      Structural Certification
+                    </SelectItem>
+                    <SelectItem value="consultation">
+                      Engineering Consultation
+                    </SelectItem>
+                    <SelectItem value="builtsuite">
+                      Built Suite Access/Training
+                    </SelectItem>
                   </SelectContent>
                 </Select>
               </div>
 
               {/* Message */}
               <div>
-                <Label htmlFor="message" className="block text-sm font-semibold text-gray-dark mb-2">
+                <Label
+                  htmlFor="message"
+                  className="block text-sm font-semibold text-gray-dark mb-2"
+                >
                   Your Message *
                 </Label>
                 <Textarea
@@ -174,7 +209,7 @@ export default function ContactSection() {
 
               {/* Submit Button */}
               <div className="text-center">
-                <Button 
+                <Button
                   type="submit"
                   disabled={submitContact.isPending}
                   className="bg-green-primary hover:bg-green-dark text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 shadow-lg w-full sm:w-auto"
@@ -198,9 +233,7 @@ export default function ContactSection() {
                 <h4 className="font-semibold text-gray-dark mb-2">
                   {info.title}
                 </h4>
-                <p className="text-gray-text">
-                  {info.content}
-                </p>
+                <p className="text-gray-text">{info.content}</p>
               </div>
             );
           })}

@@ -94,7 +94,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center">
                 <span className="mr-2">📞</span>
-                (02) 1234 5678
+                (+61) 414 142 833
               </li>
               <li className="flex items-center">
                 <span className="mr-2">📍</span>
@@ -107,7 +107,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="border-t border-gray-700 pt-8 text-center text-gray-400">
           <p>&copy; 2025 Built Engineers. All rights reserved.</p>
-          <p className="text-sm mt-2">Designed & built with React + Bootstrap.</p>
+          <p className="text-sm mt-2">An SR Design.</p>
         </div>
       </div>
     </footer>
