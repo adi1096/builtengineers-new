@@ -15,11 +15,13 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      <HeroSection />
-      <ServicesSection />
-      <TestimonialsSection />
-      <ResourcesSection onShowBuiltSuite={() => setShowBuiltSuite(true)} />
-      <ContactSection />
+      <main>
+        <HeroSection />
+        <ServicesSection />
+        <TestimonialsSection />
+        <ResourcesSection onShowBuiltSuite={() => setShowBuiltSuite(true)} />
+        <ContactSection />
+      </main>
       <Footer />
       
       <BuiltSuiteModal 

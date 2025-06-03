@@ -185,24 +185,24 @@ export default function BuiltSuiteModal({
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="text-3xl font-bold text-green-primary mb-4">
+          <DialogTitle className="text-2xl sm:text-3xl font-bold text-green-primary mb-4">
             Built Suite
           </DialogTitle>
-          <p className="text-lg text-gray-text">
+          <p className="text-base sm:text-lg text-gray-text">
             Comprehensive structural engineering software suite designed for modern engineering workflows
           </p>
           <div className="mt-4">
-            <span className="bg-green-light text-green-dark px-4 py-2 rounded-full text-sm font-semibold">
+            <span className="bg-green-light text-green-dark px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-semibold">
               Professional Engineering Tools
             </span>
           </div>
         </DialogHeader>
 
-        <div className="space-y-8">
+        <div className="space-y-6 sm:space-y-8">
           {/* Key Features Section */}
           <div>
-            <h3 className="text-2xl font-bold text-gray-dark mb-6">Key Features</h3>
-            <div className="grid md:grid-cols-2 gap-6">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-dark mb-4 sm:mb-6">Key Features</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               {features.map((feature, index) => {
                 const IconComponent = feature.icon;
                 return (
