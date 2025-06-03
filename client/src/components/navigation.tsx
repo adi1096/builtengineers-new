@@ -71,8 +71,8 @@ export default function Navigation() {
                   <div className="w-1 h-2 bg-green-500 rounded-sm"></div>
                 </div>
                 <div className="text-left">
-                  <div className="text-sm font-bold text-green-600 leading-tight">BUILT</div>
-                  <div className="text-xs font-medium text-gray-600 leading-tight">ENGINEERS & CONSULTANTS</div>
+                  <div className="text-sm font-bold text-green-600 leading-tight">BUILT ENGINEERS</div>
+                  <div className="text-xs font-medium text-gray-600 leading-tight">& CONSULTANTS</div>
                 </div>
               </div>
             </div>

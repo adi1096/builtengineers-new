@@ -21,7 +21,7 @@ export default function Footer() {
                 <div className="w-1.5 h-3 bg-green-primary rounded-sm"></div>
               </div>
               <div>
-                <div className="text-sm font-bold">BUILT ENGINEERS</div>
+                <div className="text-sm font-bold text-green-primary">BUILT ENGINEERS</div>
                 <div className="text-xs text-gray-400">& CONSULTANTS</div>
               </div>
             </div>
